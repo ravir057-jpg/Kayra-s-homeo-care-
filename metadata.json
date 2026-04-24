@@ -1,0 +1,12 @@
+{
+  "name": "Kayra's Homeo Care - Professional Clinical Suite",
+  "description": "Enterprise-grade clinical management for homeopathic practitioners. Features AI-powered case anamnesis, integrated Synthesis repertory, digital materia medica, and secure tele-consultation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "video-calling",
+    "payment-processing"
+  ]
+}

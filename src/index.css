@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Crimson Pro", serif;
+  
+  --color-hc-green: #2d6a4f;
+  --color-hc-light: #fcfaf7;
+  --color-hc-accent: #d8f3dc;
+  --color-hc-dark: #1b4332;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-hc-light text-hc-dark;
+  }
+  
+  h1, h2, h3, .serif {
+    @apply font-serif;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+
+  .custom-scrollbar-white::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar-white::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar-white::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+
+  /* Print Styles */
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #prescription-content, #prescription-content * {
+      visibility: visible;
+    }
+    #prescription-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: white !important;
+      padding: 0 !important;
+    }
+    .print\:bg-white {
+      background: white !important;
+    }
+    .print\:shadow-none {
+      box-shadow: none !important;
+    }
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-white border border-hc-green/10 rounded-xl shadow-sm transition-all hover:shadow-md p-4 flex flex-col justify-between;
+  }
+  
+  .ai-panel {
+    @apply bg-linear-to-br from-hc-green to-hc-dark text-white rounded-2xl shadow-lg p-5 flex flex-col;
+  }
+  
+  .clinic-border {
+    @apply border-hc-green/20;
+  }
+}
